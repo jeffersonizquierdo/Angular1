@@ -2,7 +2,11 @@
 <p>apellido del empleado {{apellido.value}}</p>
 <p>edad del empleado {{ edad.value}}</p>
 Ingresa tu nombre: <input type="text" #nombre />
+<br>
+<br>
 Ingresa tu apellido: <input type="text" #apellido />
+<br>
+<br>
 Ingresa tu edad: <input type="number" #edad />
 
 <input type="submit" value="Dale!" (click)="llamaEmpresa(nombre.value, apellido.value, edad.valueAsNumber)"/>
