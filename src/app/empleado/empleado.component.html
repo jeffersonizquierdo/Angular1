@@ -1,12 +1,21 @@
-<p>nombre del empleado {{nombre.value}}</p>
-<p>apellido del empleado {{apellido.value}}</p>
-<p>edad del empleado {{ edad.value}}</p>
-Ingresa tu nombre: <input type="text" #nombre />
-<br>
-<br>
-Ingresa tu apellido: <input type="text" #apellido />
-<br>
-<br>
-Ingresa tu edad: <input type="number" #edad />
+<div>
+    <p>nombre del empleado {{nombre.value}}</p>
+    <p>apellido del empleado {{apellido.value}}</p>
+    <p>edad del empleado {{ edad.value}}</p>
+    Ingresa tu nombre: <input type="text" #nombre (keyup)="0" [disabled]='habilitacion'/>
+    <br>
+    <br>
+    Ingresa tu apellido: <input type="text" #apellido  (keyup)="0"/>
+    <br>
+    <br>
+    Ingresa tu edad: <input type="number" #edad (keyup)="0"/>
+    <br>
+    <br>
 
-<input type="submit" value="Dale!" (click)="llamaEmpresa(nombre.value, apellido.value, edad.valueAsNumber)"/>
+    <p> {{textoRegistro}} </p>
+    Registrado <input type="radio" name="registro" value="si" id="registro" [checked] = 'validarRegistro' (click)=setUsuarioRegistrado($event)>
+    No Registrado <input type="radio" value="no" name="registro" (click)=setUsuarioRegistrado($event) >
+
+    <input type="button" (click)=cambiarCheck()>
+
+</div>

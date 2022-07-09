@@ -7,14 +7,47 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmpleadoComponent implements OnInit {
 
-  // ///nombre = 'jefferson';
-  // apellido = 'izquierdo';
-  // edad = 20;
+  nombre = 'jefferson';
+  apellido = 'izquierdo';
+  edad = 20;
 
-  llamaEmpresa(vaiue:String, value2:String, value3:Number) {
+
+  habilitacion = true;
+
+  validarRegistro = false;
+
+  textoRegistro= 'No hay usuario registrado';
+
+  usuarioRegistrado = false;
+
+  cambiarCheck(){
+
+    this.habilitacion=!this.habilitacion;
+  }
+
+  registroUsuario(event: Event){
+
+    alert(event.target)
     
   }
 
+  getUsuarioRegistrado (){
+
+    this.usuarioRegistrado = false;
+
+  }
+
+  setUsuarioRegistrado(event:Event ){
+
+    if ((<HTMLInputElement>event.target).value =='si' ) {
+
+      this.textoRegistro = 'El usuario se ha registrado con exito';
+    } else {
+
+      this.textoRegistro= 'No hay usuario registrado';
+    }
+
+  }
 
   constructor() { }
 
